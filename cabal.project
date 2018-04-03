@@ -1,7 +1,7 @@
 ----------------------------------------
 packages:
   ./emacs-module-types/
-  -- ./emacs-module-ffi/
+  ./emacs-module-ffi/
 
 ----------------------------------------
 optional-packages: 

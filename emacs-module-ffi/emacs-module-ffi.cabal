@@ -1,11 +1,11 @@
-name:                emacs-module-types
+name:                emacs-module-ffi
 version:             0.0.0
 cabal-version:       >=2
 
 ----------------------------------------
 
 build-type:          Simple 
-category:            Emacs, Editor
+category:            Emacs, Editor, FFI
 synopsis:            TODO 
 description:         
  .
@@ -42,7 +42,7 @@ extra-source-files:
 source-repository head
   type:     git
   location: git://github.com/sboosali/Haskell-Emacs-Module.git
-  subdir:   emacs-module-types
+  subdir:   emacs-module-ffi
 
 -- source-repository this
 --   type:     git
@@ -65,7 +65,7 @@ source-repository head
 library
  hs-source-dirs:
    sources
-   examples
+   -- examples
 
  ghc-options:
 
@@ -181,6 +181,13 @@ library
    PatternSynonyms
 
    --------------------
+   -- FFI
+   --------------------
+   ForeignFunctionInterface
+   -- UnliftedFFITypes
+   -- CApiFFI
+
+   --------------------
    -- (miscellaneous extensions)
    --------------------
    ScopedTypeVariables
@@ -210,17 +217,14 @@ library
    -- (miscellaneous)
 
  exposed-modules:
-   Language.Emacs
-   Language.Emacs.Types
+   Emacs.FFI
 
-   Example.Language.Emacs
-
- other-modules:
-   Prelude.Language.Emacs
-   -- Paths_emacs_module_types
+ -- other-modules:
+ --   Prelude.Language.Emacs.FFI
+ --   -- Paths_emacs_module_ffi
 
  -- autogen-modules:
-   -- Paths_emacs_module_types
+   -- Paths_emacs_module_ffi
 
  build-depends:
 
@@ -240,8 +244,8 @@ library
   -- (sboosali on github, sboo on hackage)
   --------------------
 
-  , spiros    >=0.2
-  , enumerate >=0.2 
+  -- , spiros    >=0.2
+  -- , enumerate >=0.2 
 
   --------------------
   -- "extended" standard library 
@@ -249,46 +253,17 @@ library
 
   , deepseq
   , hashable
-  , unordered-containers
 
   --------------------
   -- ekmett 
   --------------------
 
   , exceptions
-  , lens
 
   --------------------
   -- (miscellaneous packages)
   --------------------
 
   -- ,
-
-
-----------------------------------------
--- TESTS...
-
-----------------------------------------
-
--- test-suite unit
-
---  hs-source-dirs:      test
---  main-is:             DocTests.hs
---  type:                exitcode-stdio-1.0
-
---  default-language:    Haskell2010
---  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
-
---  build-depends:
---     base
---   , emacs-module-types
---   , doctest
-
-----------------------------------------
--- NOTES
-
--- originally generated from the `spirosboosalis-simple.hsfiles` template, with `stack new`:
--- 
--- $ stack new haskell-emacs-module https://raw.githubusercontent.com/sboosali/configuration/master/stack/templates/spirosboosalis.hsfiles 
 
 ----------------------------------------
