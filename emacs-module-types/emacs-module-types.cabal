@@ -1,6 +1,6 @@
-name:                haskell-emacs-module
+name:                emacs-module-types
 version:             0.0.0
-cabal-version:       >=1.24
+cabal-version:       >=2
 
 ----------------------------------------
 
@@ -12,13 +12,13 @@ description:
  TODO
  . 
 
-homepage:            http://github.com/sboosali/haskell-emacs-module#readme
-bug-reports:         http://github.com/sboosali/haskell-emacs-module/issues
-author:              Spiros Boosalis
+homepage:            http://github.com/sboosali/Haskell-Emacs-Module#readme
+bug-reports:         http://github.com/sboosali/Haskell-Emacs-Module/issues
+author:              Spiros Boosalis, Takenari Shinohara
 maintainer:          Spiros Boosalis <samboosalis@gmail.com>
-copyright:           2018 Spiros Boosalis
-license:             BSD3
-license-file:        LICENSE
+copyright:           2018 Spiros Boosalis, 2016 Takenari Shinohara
+license:             GPL-3.0
+license-file:        LICENSE.txt
 stability:           provisional
 tested-with:
   -- GHC == 7.10.3
@@ -31,6 +31,7 @@ tested-with:
 extra-source-files:
   README.md
   NOTES.md
+  LICENSE.txt
   -- stack.yaml
 
 -- data-files:
@@ -40,13 +41,13 @@ extra-source-files:
 
 source-repository head
   type:     git
-  location: git://github.com/sboosali/haskell-emacs-module.git
-  -- subdir: haskell-emacs-module
+  location: git://github.com/sboosali/Haskell-Emacs-Module.git
+  subdir:   emacs-module-types
 
 -- source-repository this
 --   type:     git
---   location: https://github.com/sboosali/haskell-emacs-module/tree/v0.1.0
--- -- subdir: haskell-emacs-module
+--   location: https://github.com/sboosali/Haskell-Emacs-Module/tree/v0.1.0
+-- -- subdir: Haskell-Emacs-Module
 -- 
 -- -- Update the `source-repository` for `this` package version on every release
 -- -- (i.e. every hackage upload or metadata revision).  
@@ -55,6 +56,8 @@ source-repository head
 
 ----------------------------------------
 -- FLAGS
+
+ 
 
 ----------------------------------------
 -- LIBRARY
@@ -214,10 +217,10 @@ library
 
  other-modules:
    Prelude.Language.Emacs
-   -- Paths_haskell_emacs_module
+   -- Paths_emacs_module_types
 
  -- autogen-modules:
-   -- Paths_haskell_emacs_module
+   -- Paths_emacs_module_types
 
  build-depends:
 
@@ -237,8 +240,8 @@ library
   -- (sboosali on github, sboo on hackage)
   --------------------
 
-  , spiros >=0.2
-  -- , enumerate >=0.2 
+  , spiros    >=0.2
+  , enumerate >=0.2 
 
   --------------------
   -- "extended" standard library 
@@ -267,21 +270,19 @@ library
 
 ----------------------------------------
 
-test-suite doctest
- if (impl(ghcjs))
-    buildable: False
+-- test-suite unit
 
- hs-source-dirs:      test
- main-is:             DocTests.hs
- type:                exitcode-stdio-1.0
+--  hs-source-dirs:      test
+--  main-is:             DocTests.hs
+--  type:                exitcode-stdio-1.0
 
- default-language:    Haskell2010
- ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+--  default-language:    Haskell2010
+--  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
 
- build-depends:
-    base
-  , haskell-emacs-module
-  , doctest
+--  build-depends:
+--     base
+--   , emacs-module-types
+--   , doctest
 
 ----------------------------------------
 -- NOTES

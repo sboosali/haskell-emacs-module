@@ -1,2 +1,14 @@
+----------------------------------------
 packages:
-  ./
+  ./emacs-module-types/
+  -- ./emacs-module-ffi/
+
+----------------------------------------
+optional-packages: 
+
+ -- my local dependencies
+ ../spiros/
+ ../enumerate/enumerate
+ -- ../enumerate/enumerate-function
+
+----------------------------------------
