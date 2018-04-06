@@ -19,7 +19,9 @@ maintainer:          Spiros Boosalis <samboosalis@gmail.com>
 copyright:           2018 Spiros Boosalis, 2016 Takenari Shinohara
 license:             GPL-3.0
 license-file:        LICENSE.txt
-stability:           provisional
+stability:           experimental
+--TODO warning about possible creating (via segfaulting) or hanging of your emacs. my ignorance about it's behavior on other platforms from my machine (other Linux, other architectures, OSX, especially Windows). 
+
 tested-with:
   -- GHC == 7.10.3
   -- GHC == 8.0.2
@@ -266,4 +268,33 @@ library
 
   -- ,
 
+----------------------------------------
+
+foreign-library haskellemacs
+  type:                native-shared
+  lib-version-info:    0:0:0
+
+  -- if os(windows)
+  --   options:      standalone
+  --   mod-def-file: HaskellEmacs.def
+
+  default-language: Haskell2010
+  ghc-options: 
+   -Wall
+
+  c-sources: 
+   c-sources/MyForeignLibWrapper.c
+  
+  hs-source-dirs:
+   hs-sources
+  other-modules: 
+   
+
+  build-depends:
+    base >=4.7 && <5
+
+-- > Without the standalone option the generated library has dependencies on the Haskell runtime library (libHSrts), the base library (libHSbase), etc.
+-- > Currently, standalone must be used on Windows and must not be used on any other platform.
+-- 
+ 
 ----------------------------------------

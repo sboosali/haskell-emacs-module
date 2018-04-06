@@ -19,7 +19,7 @@ maintainer:          Spiros Boosalis <samboosalis@gmail.com>
 copyright:           2018 Spiros Boosalis, 2016 Takenari Shinohara
 license:             GPL-3.0
 license-file:        LICENSE.txt
-stability:           provisional
+stability:           experimental
 tested-with:
   -- GHC == 7.10.3
   -- GHC == 8.0.2
