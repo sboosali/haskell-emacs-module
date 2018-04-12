@@ -2,6 +2,8 @@
 
 re-configure the given Haskell compiler (in particular, its runtime-system a.k.a. its RTS), to be built with position independent code, i.e. `-fPIC`.
 
+integer-simple
+
 */
 ########################################
 # ARGUMENTS

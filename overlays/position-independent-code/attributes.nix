@@ -9,6 +9,21 @@ e.g. returns attributes like:
     haskell.packages.position-independent-code.${ghc} = { ... }
   }
 
+e.g. nix-repl
+
+  nix-repl> static-spiros = (import ~/nixpkgs {}).haskell.packages.position-independent-code.ghc822.spiros
+  nix-repl> :b static-spiros 
+  
+  # 
+
+or with the cmdln:
+
+  $ nix-build --show-trace  -E '(import ~/nixpkgs {}).haskell.packages.position-independent-code.ghc822.spiros'
+
+  $ nix-env --show-trace -f ~/nixpkgs -iA haskell.packages.position-independent-code.ghc822.spiros
+
+
+
 */
 ########################################
 # ARGUMENTS

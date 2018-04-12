@@ -1,4 +1,6 @@
 # a simplified/specialized pkgs/development/haskell-modules/default.nix
+# 
+# 'let nixpkgs = import <nixpkgs> {}; in "${nixpkgs.path}/pkgs/development/haskell-modules/default.nix"'
 
 ########################################
 
